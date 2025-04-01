@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>12ft.io Paywall Bypasser</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+    }
+    h2 {
+      margin-top: 0;
+      color: #4285f4;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin-bottom: 10px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    li {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px solid #eee;
+    }
+    button {
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3367d6;
+    }
+    .remove-btn {
+      background-color: #db4437;
+      font-size: 12px;
+      padding: 2px 6px;
+    }
+    .remove-btn:hover {
+      background-color: #c53929;
+    }
+    .add-site {
+      display: flex;
+      margin-top: 10px;
+    }
+    #new-site {
+      flex-grow: 1;
+      margin-right: 5px;
+      padding: 5px;
+    }
+    .current-url {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>12ft.io Paywall Bypasser</h2>
+  
+  <div class="current-url">
+    <button id="bypass-current">Bypass Current Page</button>
+  </div>
+  
+  <h3>Bypass These Sites:</h3>
+  <ul id="sites-list"></ul>
+  
+  <div class="add-site">
+    <input type="text" id="new-site" placeholder="Enter website domain (e.g., wsj.com)">
+    <button id="add-btn">+</button>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
