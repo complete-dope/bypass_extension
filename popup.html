@@ -55,6 +55,18 @@
     }
     .current-url {
       margin-top: 10px;
+      display: flex;
+      gap: 5px;
+    }
+    .keyboard-shortcuts {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #f1f3f4;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+    .keyboard-shortcuts p {
+      margin: 5px 0;
     }
   </style>
 </head>
@@ -63,6 +75,7 @@
   
   <div class="current-url">
     <button id="bypass-current">Bypass Current Page</button>
+    <button id="unbypass-current">Unbypass Current Page</button>
   </div>
   
   <h3>Bypass These Sites:</h3>
@@ -71,6 +84,12 @@
   <div class="add-site">
     <input type="text" id="new-site" placeholder="Enter website domain (e.g., wsj.com)">
     <button id="add-btn">+</button>
+  </div>
+  
+  <div class="keyboard-shortcuts">
+    <p><strong>Keyboard Shortcuts:</strong></p>
+    <p>Bypass current page: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>1</kbd></p>
+    <p>Unbypass current page: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>2</kbd></p>
   </div>
   
   <script src="popup.js"></script>

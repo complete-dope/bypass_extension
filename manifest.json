@@ -1,27 +1,39 @@
 {
-    "manifest_version": 3,
-    "name": "12ft.io Paywall Bypasser",
-    "version": "1.0",
-    "description": "Open links through 12ft.io to bypass paywalls",
-    "permissions": ["webNavigation", "storage", "activeTab"],
-    "host_permissions": ["<all_urls>"],
-    "action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "16": "icon.png",
-        "48": "icon.png",
-        "128": "icon.png"
-      }
+  "manifest_version": 3,
+  "name": "12ft.io Paywall Bypasser",
+  "version": "1.0",
+  "description": "Open links through 12ft.io to bypass paywalls",
+  "permissions": ["webNavigation", "storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "commands": {
+    "bypass-current-page": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+1"
+      },
+      "description": "Bypass current page with 12ft.io"
     },
-    "background": {
-      "service_worker": "background.js"
-    },
-    "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "js": ["content.js"]
-      }
-    ]
+    "unbypass-current-page": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+2"
+      },
+      "description": "Remove 12ft.io bypass from current page"
+    }
   }
-
-  
+}
